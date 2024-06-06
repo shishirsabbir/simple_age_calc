@@ -1,4 +1,4 @@
-from flask import Flask, request, render_template, Response
+from flask import Flask, request, render_template, Response, send_from_directory
 from datetime import datetime
 
 app = Flask(__name__)
@@ -15,6 +15,12 @@ def calculate_age(birthdate):
 @app.route('/')
 def index():
     return render_template('index.html')
+
+
+# adding favicon
+@app.route('/favicon.ico')
+def favicon():
+    return send_from_directory(app.root_path, 'static/age.ico', mimetype='image/vnd.microsoft.icon')
 
 
 @app.route('/calculate_age', methods=['GET', 'POST'])
