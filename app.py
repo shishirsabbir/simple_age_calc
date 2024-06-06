@@ -20,7 +20,7 @@ def index():
 # adding favicon
 @app.route('/favicon.ico')
 def favicon():
-    return send_from_directory(app.root_path, 'static/age.ico', mimetype='image/vnd.microsoft.icon')
+    return send_from_directory(app.root_path, 'static/age.png', mimetype='image/png')
 
 
 @app.route('/calculate_age', methods=['GET', 'POST'])
