@@ -3,6 +3,8 @@ from datetime import datetime
 
 app = Flask(__name__)
 
+# magic
+
 
 def calculate_age(birthdate):
     today = datetime.today()
